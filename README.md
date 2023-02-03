@@ -7,4 +7,4 @@ Repo for submit the URL to it in https://www.freecodecamp.org/learn/relational-d
 
 **universe.sql** - Celestial Bodies Database project
 
-**DB1** - FCC Student Database: Part 1
+**DB1** - Student Database: Part 1
