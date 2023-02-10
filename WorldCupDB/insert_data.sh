@@ -21,12 +21,14 @@ do
     # if not found
     if [[ -z $WINNER_TEAM_ID ]]  # if WINNER_TEAM_ID string is empty
     then
-      # insert winner team
+      # insert winner into teams table
       INSERT_TEAM_RESULT=$($PSQL "INSERT INTO teams(name) VALUES('$WINNER')")
       if [[ $INSERT_TEAM_RESULT == "INSERT 0 1" ]]
       then
-        echo Inserted into teams: $WINNER
+        echo Inserted TEAM: $WINNER
       fi
+      # get new winner team_id
+      WINNER_TEAM_ID=$($PSQL "SELECT team_id FROM teams WHERE name='$WINNER'")
     fi
 
     # get opponent team_id
@@ -34,12 +36,21 @@ do
     # if not found
     if [[ -z $OPPONENT_TEAM_ID ]]  # if OPPONENT_TEAM_ID string is empty
     then
-      # insert opponent team
+      # insert opponent into teams table
       INSERT_TEAM_RESULT=$($PSQL "INSERT INTO teams(name) VALUES('$OPPONENT')")
       if [[ $INSERT_TEAM_RESULT == "INSERT 0 1" ]]
       then
-        echo Inserted into teams: $OPPONENT
+        echo Inserted TEAM: $OPPONENT
       fi
+      # get new opponent team_id
+      OPPONENT_TEAM_ID=$($PSQL "SELECT team_id FROM teams WHERE name='$OPPONENT'")
+    fi
+
+    # insert rows into games table
+    INSERT_GAMES_RESULT=$($PSQL "INSERT INTO games(year, round, winner_id, opponent_id, winner_goals, opponent_goals) VALUES('$YEAR', '$ROUND', $WINNER_TEAM_ID, $OPPONENT_TEAM_ID, $WINNER_GOALS, $OPPONENT_GOALS)")
+    if [[ $INSERT_GAMES_RESULT == "INSERT 0 1" ]]
+    then
+      echo Inserted GAME, $WINNER \($WINNER_GOALS\) - \($OPPONENT_GOALS\) $OPPONENT
     fi
 
   fi 
