@@ -1,0 +1,62 @@
+echo hello bash > stdout.txt
+echo hello bash >> stdout.txt
+
+bad_command 2> stderr.txt
+echo hello bash 1> stdout.txt
+
+read NAME
+echo $NAME 
+echo $NAME > stdout.txt 
+echo VASYA | read NAME
+echo $NAME 
+
+cat
+cat name.txt 
+cat < name.txt 
+
+touch script.sh
+chmod +x script.sh 
+./script.sh 
+./script.sh < name.txt 
+./script.sh < name.txt 2> stderr.txt 
+./script.sh < name.txt 2> stderr.txt 1> stdout.txt 
+
+cat kitty_ipsum_1.txt 
+cat kitty_ipsum_2.txt 
+
+man wc
+wc kitty_ipsum_1.txt -l
+wc kitty_ipsum_1.txt -w
+wc kitty_ipsum_1.txt -m
+wc kitty_ipsum_1.txt --chars
+
+cat kitty_ipsum_1.txt | wc
+wc < kitty_ipsum_1.txt 
+
+echo "~~ kitty_ipsum_1.txt info ~~" > kitty_info.txt
+
+echo -e "\nNumber of lines:" >> kitty_info.txt 
+cat kitty_ipsum_1.txt | wc -l >> kitty_info.txt
+
+echo -e "\nNumber of words:" >> kitty_info.txt 
+cat kitty_ipsum_1.txt | wc -w >> kitty_info.txt 
+
+echo -e "\nNumber of characters:" >> kitty_info.txt 
+cat kitty_ipsum_1.txt | wc -m >> kitty_info.txt
+
+grep 'meow' kitty_ipsum_1.txt 
+grep 'meow' kitty_ipsum_1.txt --color
+grep 'meow' kitty_ipsum_1.txt --color -n
+grep 'meow[a-z]*' kitty_ipsum_1.txt --color -n
+
+echo -e "\nNumber of times meow or meowzer appears:" >> kitty_info.txt 
+grep 'meow[a-z]*' kitty_ipsum_1.txt -o | wc -l >> kitty_info.txt 
+
+echo -e "\nLines that they appear on:" >> kitty_info.txt 
+grep 'meow[a-z]*' kitty_ipsum_1.txt -n | sed 's/([0-9]+).*/\1/' -r >> kitty_info.txt
+
+echo -e "\nNumber of times cat, cats, or catnip appears:" >> kitty_info.txt
+grep 'cat[a-z]*' kitty_ipsum_1.txt -o | wc -l >> kitty_info.txt 
+
+echo -e "\nLines that they appear on:" >> kitty_info.txt
+grep 'cat[a-z]*' kitty_ipsum_1.txt -n | sed -r 's/([0-9]+).*/\1/' >> kitty_info.txt
