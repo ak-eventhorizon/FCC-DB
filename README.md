@@ -10,4 +10,5 @@ Repo for submit the URL to it in https://www.freecodecamp.org/learn/relational-d
 **StudentDB1** - Student Database: Part 1\
 **StudentDB2** - Student Database: Part 2\
 **WorldCupDB** - World Cup Database project\
-**KittyIpsum** - Kitty Ipsum Translator
+**KittyIpsum** - Kitty Ipsum Translator\
+**BikeRental** - Bike Rental Shop
