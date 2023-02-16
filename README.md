@@ -1,7 +1,7 @@
 # FCC-DB
 freeCodeCamp - Relational Databases Projects
 
-Repo for submit the URL to it in https://www.freecodecamp.org/learn/relational-database/
+Repo for submit the URLs to https://www.freecodecamp.org/learn/relational-database/
 
 
 
@@ -11,4 +11,5 @@ Repo for submit the URL to it in https://www.freecodecamp.org/learn/relational-d
 **StudentDB2** - Student Database: Part 2\
 **WorldCupDB** - World Cup Database project\
 **KittyIpsum** - Kitty Ipsum Translator\
-**BikeRental** - Bike Rental Shop
+**BikeRental** - Bike Rental Shop\
+**SalonSched** - Salon Appointment Scheduler project
