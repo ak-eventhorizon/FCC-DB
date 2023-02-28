@@ -13,4 +13,5 @@ Repo for submit the URLs to https://www.freecodecamp.org/learn/relational-databa
 **KittyIpsum** - Kitty Ipsum Translator\
 **BikeRental** - Bike Rental Shop\
 **SalonSched** - Salon Appointment Scheduler project\
-**SQLRefObject** - Learn Git by Building an SQL Reference Object
+**SQLRefObject** - Learn Git by Building an SQL Reference Object\
+**PeriodTableDB**** - Periodic Table Database project
