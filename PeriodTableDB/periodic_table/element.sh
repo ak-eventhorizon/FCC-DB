@@ -12,21 +12,20 @@ if [[ $1 == "" ]]
 then
   echo -e "Please provide an element as an argument."
 else
-
   # if argument is integer number
   if [[ $1 =~ ^[0-9]+$ ]]
   then
     #echo -e "$1 is a number\n"
     ELEMENT=$($PSQL "SELECT * FROM properties INNER JOIN elements USING(atomic_number) INNER JOIN types USING(type_id) WHERE atomic_number=$1")
-  # if argument is one/two letter string
+  # if argument is one(upper)/two(lower) letter string -> H or He etc.
   elif [[ $1 =~ ^[A-Z][a-z]?$ ]]
   then
-    #echo -e "$1 is one/two letters - SYMBOL\n"
+    #echo -e "$1 is one/two letters - SYMBOL of element\n"
     ELEMENT=$($PSQL "SELECT * FROM properties INNER JOIN elements USING(atomic_number) INNER JOIN types USING(type_id) WHERE symbol='$1'")
-  # if argument is string more then two letters
+  # if argument is a string more then two letters -> Hydrogen or Lithium etc.
   elif [[ $1 =~ ^[A-Z][a-z]+$ ]]
   then
-    #echo -e "$1 is NAME\n"
+    #echo -e "$1 is NAME of element\n"
     ELEMENT=$($PSQL "SELECT * FROM properties INNER JOIN elements USING(atomic_number) INNER JOIN types USING(type_id) WHERE name='$1'")
   fi
 
