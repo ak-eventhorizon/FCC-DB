@@ -14,4 +14,5 @@ Repo for submit the URLs to https://www.freecodecamp.org/learn/relational-databa
 **BikeRental** - Bike Rental Shop\
 **SalonSched** - Salon Appointment Scheduler project\
 **SQLRefObject** - Learn Git by Building an SQL Reference Object\
-**PeriodTableDB** - Periodic Table Database project
+**PeriodTableDB** - Periodic Table Database project\
+**NumGuessing** - Number Guessing Game project
