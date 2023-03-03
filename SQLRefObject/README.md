@@ -25,7 +25,9 @@
 \
 ***git branch*** - показать список веток\
 \
-***git branch new_branch_name*** - создать ветку new_branch_name\
+***git branch new_branch*** - создать ветку new_branch\
+\
+***git branch -m new_branch_name*** - переименовать текущую ветку в new_branch_name\
 \
 ***git branch -d branch_name*** - удалить ветку branch_name\
 \
