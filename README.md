@@ -57,7 +57,7 @@ Repo for submit the URLs to https://www.freecodecamp.org/learn/relational-databa
 \
 ***git log*** - журнал коммитов\
 \
-***git log --oneline*** - журнал коммитов в одну строку на коммит\
+***git log --oneline*** - журнал коммитов по одной строке на коммит\
 \
 ***git diff*** - показать изменения относительно последнего коммита\
 \
