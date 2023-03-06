@@ -38,7 +38,9 @@ Repo for submit the URLs to https://www.freecodecamp.org/learn/relational-databa
 \
 **\h** - помощь по SQL командам (SELECT, UPDATE, DROP и т.д.)\
 \
-**\\?** - помощь по командам оболочки psql (\d, \c, \l и т.д.)
+**\\?** - помощь по командам оболочки psql (\d, \c, \l и т.д.)\
+\
+**\q** - выход из оболочки psql
 
 ## git
 ***git init*** - создать репозиторий в текущем каталоге\
