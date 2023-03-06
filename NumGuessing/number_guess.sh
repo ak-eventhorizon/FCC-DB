@@ -57,8 +57,8 @@ do
       IS_NUMBER_GUESSED=true
       echo -e "You guessed it in $GUESS_ATTEMPTS tries. The secret number was $CURRENT_RANDOM. Nice job!"
       
-      CURRENT_USER_QUERY=$($PSQL "SELECT * FROM number_guess WHERE name = '$USER_NAME'")
-      echo -e "$CURRENT_USER_QUERY" | while IFS="|" read USER_ID NAME GAMES_PLAYED BEST_GAME
+      CURRENT_USER_QUERY=$($PSQL "SELECT name, best_game FROM number_guess WHERE name = '$USER_NAME'")
+      echo -e "$CURRENT_USER_QUERY" | while IFS="|" read NAME BEST_GAME
       do
         GAMES_INCREMENT=$($PSQL "UPDATE number_guess SET games_played = games_played+1 WHERE name = '$NAME'")
         if [[ $BEST_GAME -eq 0 || $GUESS_ATTEMPTS -lt $BEST_GAME ]]
